@@ -1,0 +1,30 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Page de login</h4>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-xs-4">
+                <p class="lead">Créer un compte <span class="text-success">NOW !</span></p>
+                <ul class="list-unstyled" style="line-height: 2">
+                    <li><span class="fa fa-check text-success"></span> C'est simple</li>
+                    <li><span class="fa fa-check text-success"></span> Facile</li>
+                    <li><span class="fa fa-check text-success"></span> Sympa</li>
+                    <li><span class="fa fa-check text-success"></span> Et surtout gratuit</li>
+                </ul>
+            </div>
+            <div class="col-xs-8">
+                <div class="well">
+                    {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+                    {{ form_widget(form) }}
+                    <div>
+                        <input class="btn btn-success" type="submit" value="{{ 'registration.submit'|trans }}" />
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

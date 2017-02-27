@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {#     NAV     #}
+    {% block navigation %}
+        {% include 'public/partials/navigation.html.twig' %}
+    {% endblock navigation %}
+
+    {#     HEADER     #}
+    {% block header %}
+        {% include 'public/main/header.html.twig' %}
+    {% endblock header %}
+
+    {#     SERVICES     #}
+    {% block services %}
+        {% include 'public/main/services.html.twig' %}
+    {% endblock services %}
+
+    {#     PORTFOLIO     #}
+    {% block portfolio %}
+        {% include 'public/main/portfolio.html.twig' %}
+    {% endblock portfolio %}
+
+    {#     ABOUT     #}
+    {% block about %}
+        {% include 'public/main/about.html.twig' %}
+    {% endblock about %}
+
+    {#     CONTACT     #}
+    {% block contact %}
+        {% include 'public/main/contact.html.twig' %}
+    {% endblock contact %}
+
+    {#     FOOTER     #}
+    {% block footer %}
+        {% include 'public/partials/footer.html.twig' %}
+    {% endblock footer %}
+
+{% endblock %}

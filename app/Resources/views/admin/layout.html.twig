@@ -1,0 +1,21 @@
+{% extends "admin.base.html.twig" %}
+
+{% block body %}
+
+    <div class="wrapper">
+
+        {% block navs %}
+            {% include 'admin/partials/header.html.twig' %}
+            {% include 'admin/partials/sidebar.html.twig' %}
+        {% endblock navs %}
+
+        {% block content %}
+        {% endblock content %}
+
+        {% block footer %}
+            {% include 'admin/partials/footer.html.twig' %}
+        {% endblock footer %}
+
+    </div>
+    <!-- ./wrapper -->
+{% endblock body %}

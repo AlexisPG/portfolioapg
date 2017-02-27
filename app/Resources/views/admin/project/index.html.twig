@@ -1,0 +1,90 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}
+    Projets
+{% endblock title %}
+
+{% block content %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Liste de tous les projets
+            <small>Alexis Persinette-Gautrez</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Projets</li>
+        </ol>
+        <br>
+        <a href="#" class="btn btn-success"><i class="fa fa-plus"></i> Ajouter un projet</a>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <!-- Info boxes -->
+        <div class="row">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Liste des projets</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Titre</th>
+                            <th>Catégorie</th>
+                            <th>Description courte</th>
+                            <th>Description longue</th>
+                            <th>Image</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for projet in projets %}
+                            <tr>
+                                <td>{{ projet.id }}</td>
+                                <td>{{ projet.nom }}</td>
+                                <td>{{ projet.categorie }}</td>
+                                <td>{{ projet.description }}</td>
+                                <td>{{ projet.content }}</td>
+                                <td><img class="img-responsive img-centered" src="{{ asset('agency/img/portfolio/logo/' ~ projet.logoSm) }}" alt="{{ projet.nom }} - {{ projet.description }}"></td>
+                                <td><a href="{{ path("admin.project.show", { id:projet.id }) }}" class="btn btn-success">Voir</a></td>
+                                <td><a href="{{ path("admin.project.edit", { id:projet.id }) }}" class="btn btn-primary">Modifier</a></td>
+                                <td><a href="" class="btn btn-danger">Supprimer</a></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>Titre</th>
+                            <th>Catégorie</th>
+                            <th>Description courte</th>
+                            <th>Description longue</th>
+                            <th>Image</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+
+{% endblock content %}
