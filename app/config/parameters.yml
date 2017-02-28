@@ -5,8 +5,12 @@ parameters:
     database_name: symfony
     database_user: root
     database_password: root
-    mailer_transport: smtp
-    mailer_host: 127.0.0.1
-    mailer_user: noreply@alexis.com
-    mailer_password: null
-    secret: 582c86eafbe81df4d46100a6f27c2a5865adca3c
+    #mailer_transport: smtp
+    #mailer_host: smtp.mailtrap.io
+    #mailer_user: c11c0f1bf88210
+    #mailer_password: 0e9c6398c8527a
+    #secret: 582c86eafbe81df4d46100a6f27c2a5865adca3c
+
+# Gmail
+    mailer_user: alexispersinettegautrez@gmail.com
+    mailer_password: Alexpers1
